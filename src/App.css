@@ -1,0 +1,68 @@
+body {
+    background-color:  #343a40;
+}
+
+.colour-nav {
+    background-color: #343a40;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
+.font-header {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 12vh;
+    font-family: 'Seaweed Script', cursive;
+    color: white;
+}
+
+.font-title {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 4vh;
+    text-decoration: underline;
+    color: white;
+}
+
+.font-text {
+    margin-left: 1%;
+    font-family: cursive;
+    color: white;
+}
+
+.font-text-link {
+    display: inline-block;
+    margin-left: 1%;
+    font-family: cursive;
+    color: white;
+}
+.font-text-link:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    border-bottom: 3px solid whitesmoke;
+}
+
+.font-text-footer {
+    font-size: 1.6vh;
+    font-family: cursive;
+    color: white;
+}
+
+.font-text-link-footer {
+    font-size: 1.6vh;
+    display: inline-block;
+    font-family: cursive;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+.font-text-link-footer:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    border-bottom: 3px solid whitesmoke;
+}
+
+.avatar-small {
+    width: 4vh !important;
+    height: 4vh !important;
+}
