@@ -26,14 +26,13 @@ body {
     margin-top: 2%;
     margin-bottom: 2%;
     font-size: 12vh;
-    font-family: 'Seaweed Script', cursive;
+    font-family: 'Lobster', cursive;
     color: white;
 }
 
 .font-title {
-    font-family: 'Lobster', cursive;
+    font-family: 'Seaweed Script', cursive;
     font-size: 4vh;
-    text-decoration: underline;
     color: white;
 }
 
