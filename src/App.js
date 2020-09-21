@@ -14,13 +14,13 @@ import LearnProjects from './pages/LearnProjects';
 
 function Footer() {
   const linkSource = <a 
-  useRef='noopener' 
+  rel="noopener noreferrer" 
   target='_blank'
   className='font-text-link-footer' 
   href='https://github.com/rafsaf/portfolio'>Source code in this repository</a>
 
   const linkApi = <a 
-  useRef='noopener' 
+  rel="noopener noreferrer" 
   target='_blank'
   className='font-text-link-footer' 
   href='https://rafsaf1.eu.pythonanywhere.com/api/'>Link to API</a>

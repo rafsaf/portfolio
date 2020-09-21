@@ -1,4 +1,5 @@
 export default {
+    'lang' : 'en',
     'home' : 'Home',
     'language' : 'Language',
     'polish' : 'Polski',
@@ -10,5 +11,9 @@ export default {
     'errorAppeared' : 'Error connecting to the server',
     'ClickExitToReload' : 'Close to try again.',
     'ifStillError' : 'If you still get the error, please write: rafal.safin12@gmail.com',
+    'Projects' : 'My projects',
+    'myLearnProjects' : 'My test projects',
+    'shortDescription' : 'Short Description',
+    'created' : 'Created',
     
 }

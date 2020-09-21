@@ -1,4 +1,5 @@
 export default {
+    'lang' : 'pl',
     'home' : 'Strona główna',
     'language' : 'Język',
     'polish' : 'Polski',
@@ -10,4 +11,8 @@ export default {
     'errorAppeared' : 'Błąd podczas łączenia się z serwerem',
     'ClickExitToReload' : 'Zamknij by spróbować ponownie.',
     'ifStillError' : 'Jeśli błąd wciąż się pojawia, proszę napisz: rafal.safin12@gmail.com',
+    'Projects' : 'Moje projekty',
+    'myLearnProjects' : 'Moje testowe projekty',
+    'shortDescription' : 'Krótki opis',
+    'created' : 'Utworzono',
 }

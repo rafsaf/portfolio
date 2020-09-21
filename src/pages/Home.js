@@ -20,7 +20,7 @@ function Technology(props) {
 function Contact(props) {
     let textItem;
     if (props.link) {
-        textItem = <a rel="noopener" target='_blank' className='font-text-link' href={props.text} >{props.text}</a>;
+        textItem = <a rel="noopener noreferrer" target='_blank' className='font-text-link' href={props.text} >{props.text}</a>;
     } else {
         textItem = <span className='font-text'>{props.text}</span>;
     };
@@ -42,7 +42,6 @@ function Home(props) {
     const [technologies, setTechnologies] = useState([]);
 
     const fetchContacts = () => {
-        console.log('next');
         axios
         .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
         .then(res => {
@@ -59,7 +58,6 @@ function Home(props) {
     };
 
     const fetchTechnologies = () => {
-        console.log('next');
         axios
         .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
         .then(res => {
@@ -104,6 +102,7 @@ function Home(props) {
 
         {contacts.map(row => (
             <Contact
+            key={row.description}
             description={row.description}
             image={row.image}
             text={row.text} 
@@ -128,7 +127,8 @@ function Home(props) {
         {technologies.map(row => (
             <Technology
             image={row.image}
-            title={row.title} />
+            title={row.title}
+            key={row.title} />
         ))}
         </div>
         </div>
