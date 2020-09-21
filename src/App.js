@@ -47,7 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Router  hashType='noslash'>
+        <Router hashType='noslash'>
 
 
         <Navbar collapseOnSelect expand="lg" className='colour-nav' variant="dark">
@@ -65,6 +65,7 @@ class App extends React.Component {
           </Navbar.Collapse>
         </Navbar>
 
+        <Route exact path="/" component={Home} />
         <Route path="/home" component={Home} />
         <Route path="/portfolio" component={Projects} />
         <Route path="/learn-projects" component={LearnProjects} />

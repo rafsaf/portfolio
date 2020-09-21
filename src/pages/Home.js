@@ -35,42 +35,57 @@ function Contact(props) {
 
 
 function Home(props) {
-    const [contactError, setContactError] = useState(false);
+    const [contactError, setContactError] = useState(null);
     const [contacts, setContacts] = useState([]);
 
-    const [technologyError, setTechnologyError] = useState(false);
+    const [technologyError, setTechnologyError] = useState(null);
     const [technologies, setTechnologies] = useState([]);
+
+    const fetchContacts = () => {
+        console.log('next');
+        axios
+        .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
+        .then(res => {
+            setContacts(res.data);
+            setContactError(false);
+        })
+        .catch(() => {
+            setContactError(null);
+
+            setTimeout(() => {
+                setContactError(true);
+            }, 2000);
+        });
+    };
+
+    const fetchTechnologies = () => {
+        console.log('next');
+        axios
+        .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
+        .then(res => {
+            setTechnologies(res.data);
+            setTechnologyError(false);
+        })
+        .catch(() => {
+            setTechnologyError(null);
+
+            setTimeout(() => {
+                setTechnologyError(true);
+            }, 2000);
+    });
+    };
+
 
     useEffect(
         () => {
-            axios
-            .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
-            .then(res => setContacts(res.data))
-            .catch(() => {
-                setContactError(null);
-
-                setTimeout(() => {
-                    setContactError(true);
-                }, 2000);
-            });
-
-        }, [contacts]
+            fetchContacts();
+        }, []
     );
 
     useEffect(
         () => {
-            axios
-            .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
-            .then(res => setTechnologies(res.data))
-            .catch(() => {
-                setTechnologyError(null);
-
-                setTimeout(() => {
-                    setTechnologyError(true);
-                }, 2000);
-        });
-
-        }, [technologies]
+            fetchTechnologies();
+        }, []
     );
 
     return (
@@ -84,7 +99,7 @@ function Home(props) {
         show={contactError}
         onExit={() => {
             setContactError(false);
-            setContacts([]);
+            fetchContacts();
             }} />
 
         {contacts.map(row => (
@@ -107,7 +122,7 @@ function Home(props) {
         show={technologyError}
         onExit={() => {
             setTechnologyError(false);
-            setTechnologies([]);
+            fetchTechnologies();
         }} />
 
         {technologies.map(row => (
