@@ -6,8 +6,6 @@ import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { HashRouter as Router, Link, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -35,14 +33,6 @@ function Footer() {
           {linkSource} &amp; {linkApi}
           <p>@Created 2020</p>
         </div>
-  );
-}
-function OwnDropdown() {
-  return (<select>
-    <option value="0">Select car:</option>
-    <option value="1">Audi</option>
-    <option value="2">BMW</option>
-  </select>
   );
 }
 
