@@ -5,6 +5,8 @@ import './services/localizationService';
 import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { HashRouter as Router, Link, Route } from "react-router-dom";
 import Home from './pages/Home';
@@ -35,7 +37,14 @@ function Footer() {
         </div>
   );
 }
-
+function OwnDropdown() {
+  return (<select>
+    <option value="0">Select car:</option>
+    <option value="1">Audi</option>
+    <option value="2">BMW</option>
+  </select>
+  );
+}
 
 class App extends React.Component {
 
@@ -57,10 +66,13 @@ class App extends React.Component {
               <Nav.Link as={Link} to="/home">{i18n('home')}</Nav.Link>
               <Nav.Link as={Link} to="/portfolio">{i18n('myProjects')}</Nav.Link>
               <Nav.Link as={Link} to="/learn-projects">{i18n('testProjects')}</Nav.Link>
-              <NavDropdown title={i18n('language')} id="collasible-nav-dropdown">
-              <NavDropdown.Item data-language="pl" onClick={this.changeLanguage}>{i18n('polish')}</NavDropdown.Item>
-                <NavDropdown.Item data-language="en" onClick={this.changeLanguage}>{i18n('english')}</NavDropdown.Item>
-              </NavDropdown>
+              <Dropdown as={Nav.Item}>
+                <Dropdown.Toggle as={Nav.Link}>{i18n('language')}</Dropdown.Toggle>
+                <Dropdown.Menu className='nav-menu-bg'>
+                  <Dropdown.Item className='nav-item-bg' data-language="pl" onClick={this.changeLanguage}>{i18n('polish')}</Dropdown.Item>
+                  <Dropdown.Item className='nav-item-bg' data-language="en" onClick={this.changeLanguage}>{i18n('english')}</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>;
             </Nav>
           </Navbar.Collapse>
         </Navbar>
