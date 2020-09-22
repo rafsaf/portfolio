@@ -1,3 +1,5 @@
+
+/* Navbar stuff */
 body {
     background-color:  #343a40;
 }
@@ -19,9 +21,12 @@ body {
     background-color: initial;
     color: whitesmoke;
 }
+/* google fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Seaweed+Script&family=Lobster&display=swap');
 
+
+/* Big front header */
 .font-header {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -30,73 +35,55 @@ body {
     color: white;
 }
 
+/* Subtitles bigger */
+
 .font-title {
     font-family: 'Seaweed Script', cursive;
-    font-size: 4vh;
+    font-size: xx-large;
     color: white;
 }
 
-.font-title-half {
+.font-title-border {
+    margin-top: 2%;
     border-top: 2px solid whitesmoke;
     font-family: 'Lobster', cursive;
-    font-size: 2.5vh;
+    font-size: 'x-large';
     color: rgb(187, 159, 174);
 }
 
-.font-text-half {
-    font-size: large;
-    font-family: 'Courgette', cursive;
-    color: white;
-}
+/* Standard and footer text */
 
 .font-text {
     font-size: large;
     font-family: 'Courgette', cursive;
-    margin-left: 1%;
     color: white;
 }
+
+.font-text-footer {
+    font-family: 'Courgette', cursive;
+    font-size: 'small';
+    color: white;
+}
+
+/* Standard and footer link */
 
 .font-text-link {
     font-size: large;
     font-family: 'Courgette', cursive;
-    display: inline-block;
-    margin-left: 1%;
     border-bottom: 3px solid transparent;
     color: white;
 }
-.font-text-link-half {
-    font-size: large;
-    font-family: 'Courgette', cursive;
-    white-space: pre-wrap; /* CSS3 */    
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */    
-    white-space: -o-pre-wrap; /* Opera 7 */    
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
-    border-bottom: 3px solid transparent;
-    color: white;
-}
-.font-text-link-half:hover {
-    color: whitesmoke;
-    text-decoration: none;
-    border-bottom: 3px solid whitesmoke;
-}
+
 .font-text-link:hover {
     color: whitesmoke;
     text-decoration: none;
     border-bottom: 3px solid whitesmoke;
 }
 
-.font-text-footer {
-    font-family: 'Courgette', cursive;
-    font-size: 1.8vh;
-
-    color: white;
-}
 
 .font-text-link-footer {
     font-family: 'Courgette', cursive;
-    font-size: 1.8vh;
-    display: inline-block;
+    font-size: 'small';
     color: white;
     border-bottom: 3px solid transparent;
 }
@@ -106,6 +93,8 @@ body {
     text-decoration: none;
     border-bottom: 3px solid whitesmoke;
 }
+
+/* Avatars */
 
 .avatar-small {
     width: 4vh !important;

@@ -1,15 +1,15 @@
 /* global i18n */
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './services/localizationService';
-import './App.css';
+import './i18n/localizationService';
+
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { HashRouter as Router, Link, Route } from "react-router-dom";
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import LearnProjects from './pages/LearnProjects';
+import Home from './Home/Home';
+import Projects from './Projects/Projects';
+import LearnProjects from './LearnProjects/LearnProjects';
 
 
 function Footer() {

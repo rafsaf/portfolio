@@ -1,56 +1,57 @@
 /* global i18n */
-import '../services/localizationService';
-import '../App.css';
-import Error from '../core/error';
-import SingleProject from '../core/singleProject';
+import '../i18n/localizationService';
+
+import Error from '../shared/error';
+import {HeaderText} from '../shared/texts';
+import SingleProject from '../shared/singleProject';
 
 import React, {useState, useEffect} from 'react';
 
 import axios from 'axios';
 
-export default function Projects() {
+
+export default function LearnProjects() {
     let lang = i18n('lang');
-    const [projectsError, setProjectsError] = useState(null);
-    const [projects, setProjects] = useState([]);
+    const [learnProjectsError, setLearnProjectsError] = useState(null);
+    const [learnProjects, setLearnProjects] = useState([]);
     
-    const fetchProjects = () => {
+    const fetchLearnProjects = () => {
         const language = localStorage.getItem('prefferedLanguage');
-        const link = 'https://rafsaf1.eu.pythonanywhere.com/api/project-'+language+'/?format=json'
+        const link = 'https://rafsaf1.eu.pythonanywhere.com/api/learn-project-'+language+'/?format=json';
         axios
         .get(link)
         .then(res =>{
-            setProjects(res.data);
-            setProjectsError(false);
+            setLearnProjects(res.data);
+            setLearnProjectsError(false);
         })
         .catch(() => {
-            setProjectsError(null);
+            setLearnProjectsError(null);
 
             setTimeout(()=>{
-                setProjectsError(true);
+                setLearnProjectsError(true);
             },2000)
         });
     };
 
     useEffect(
         () => {
-            fetchProjects();
+            fetchLearnProjects();
         }, [lang]
     );
 
     return (
-        <div id='projects'>
+        <div id='learn-projects'>
             <div className='text-center'>
-                <h1 className='font-header'>{i18n('Projects')}</h1>
-            </div>
-            <div className='text-center'>
+                <HeaderText text={i18n('myLearnProjects')}></HeaderText>
+
                 <Error
-                show={projectsError}
+                show={learnProjectsError}
                 onExit={() => {
-                    setProjectsError(null);
-                    fetchProjects();
+                    setLearnProjectsError(null);
+                    fetchLearnProjects();
                 }} />
                 <div style={{marginLeft: 25, marginRight: 25}}>
-                    {projects.map(row => (
+                    {learnProjects.map(row => (
                         <SingleProject
                         key={row.title}
                         image={row.image}
