@@ -3,15 +3,22 @@ import '../i18n/localizationService';
 import {TitleText, TitleTextBordered, NormalText, FontLink} from '../shared/texts'
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 export default function SingleProject(props) {
 
     return (
-    <div id='next-project'>
+    <div id='next-project' className='text-center mt-5'>
     <TitleText text={props.title}></TitleText>
-    <Grid container className='my-4' spacing={2}>
-    <Grid item xs={12} lg={5}>
+    <Row className='justify-content-md-center my-4'>
+    <Col xs={12}>
+        
+        <img className='mx-auto img-fluid d-block d-lg-none' alt={props.title} src={props.image} />
+        
+        </Col>
+    <Col xs={12} lg={5}>
 
     <TitleTextBordered text='Link'></TitleTextBordered>        
     <FontLink href={props.link} text={props.link}></FontLink>
@@ -20,12 +27,14 @@ export default function SingleProject(props) {
     <TitleTextBordered text={i18n('created')}></TitleTextBordered>
     <NormalText text={props.created}></NormalText>
     
-    </Grid>
-    <Grid item xs={'auto'} lg={6}>
-    <img className='img-fluid' alt={props.title} src={props.image} />
-    </Grid>
+    </Col>
+    <Col xs={12} lg={5}>
+        
+    <img className='img-fluid d-none d-lg-block' alt={props.title} src={props.image} />
+    
+    </Col>
 
-    </Grid>
+    </Row>
     </div>
     )
 } 

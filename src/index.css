@@ -38,8 +38,9 @@ body {
 /* Subtitles bigger */
 
 .font-title {
+    margin-top: 2%;
     font-family: 'Seaweed Script', cursive;
-    font-size: xx-large;
+    font-size: 8vh;
     color: white;
 }
 
@@ -47,28 +48,28 @@ body {
     margin-top: 2%;
     border-top: 2px solid whitesmoke;
     font-family: 'Lobster', cursive;
-    font-size: 'x-large';
+    font-size: x-large;
     color: rgb(187, 159, 174);
 }
 
 /* Standard and footer text */
 
 .font-text {
-    font-size: large;
+    font-size: normal ;
     font-family: 'Courgette', cursive;
     color: white;
 }
 
 .font-text-footer {
     font-family: 'Courgette', cursive;
-    font-size: 'small';
+    font-size: x-small;
     color: white;
 }
 
 /* Standard and footer link */
 
 .font-text-link {
-    font-size: large;
+    font-size: normal;
     font-family: 'Courgette', cursive;
     border-bottom: 3px solid transparent;
     color: white;
@@ -83,20 +84,20 @@ body {
 
 .font-text-link-footer {
     font-family: 'Courgette', cursive;
-    font-size: 'small';
+    font-size: x-small !important;
     color: white;
-    border-bottom: 3px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .font-text-link-footer:hover {
     color: whitesmoke;
     text-decoration: none;
-    border-bottom: 3px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
 }
 
 /* Avatars */
 
 .avatar-small {
-    width: 4vh !important;
-    height: 4vh !important;
+    width: 24px !important;
+    height: 24px !important;
 }

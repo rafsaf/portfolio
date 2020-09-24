@@ -49,7 +49,7 @@ class App extends React.Component {
         <Router hashType='noslash'>
 
 
-        <Navbar collapseOnSelect expand="lg" className='colour-nav' variant="dark">
+        <Navbar  collapseOnSelect expand="lg" className='colour-nav' variant="dark">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">

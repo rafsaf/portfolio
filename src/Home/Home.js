@@ -1,7 +1,6 @@
 /* global i18n */
 import '../i18n/localizationService';
 
-import table from './table.jpg';
 import Error from '../shared/error';
 import {TitleText, HeaderText, FontLink} from '../shared/texts';
 
@@ -9,7 +8,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-function Technology(props) {
+export function Technology(props) {
     return (
         <div className='my-3'>
         <img className='avatar-small' alt={props.title} src={props.image} />
@@ -90,7 +89,10 @@ function Home(props) {
     return (
         <div id='Home' className='text-center'>
 
-            <HeaderText text='Rafsaf'></HeaderText>
+            <HeaderText text='Rafał Safin'></HeaderText>
+            <img style={{maxWidth: '100%'}} className='mb-3' alt='myself' src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/120159406_748014692429573_4966786543556033911_n.png?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=Wc7Xd57HA9YAX-YtiXv&_nc_ht=scontent-waw1-1.xx&oh=ae34ed9c6891f9f539f98471abd84987&oe=5F923E13" />
+            
+            
             <TitleText text={i18n('contact')}></TitleText>
 
         <Error
@@ -113,11 +115,10 @@ function Home(props) {
             </Contact>
         ))}
         
-
-        <img className='img-fluid mx-auto my-5 d-none d-lg-block' width='75%' src={table} alt = 'table'/>
-        <img className='img-fluid mx-auto d-block my-5 d-lg-none' width='100%' src={table} alt = 'table'/>
         
+        <div className='mt-5'>
         <TitleText text={i18n('technology')}></TitleText>
+        </div>
 
         <Error
         show={technologyError}
