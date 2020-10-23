@@ -6,7 +6,7 @@ import {TitleText, HeaderText, FontLink} from '../shared/texts';
 
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import mySelfImage from '../myself.png'
 
 export function Technology(props) {
     return (
@@ -90,7 +90,7 @@ function Home(props) {
         <div id='Home' className='text-center'>
 
             <HeaderText text='Rafał Safin'></HeaderText>
-            <img style={{maxWidth: '100%'}} className='mb-3' alt='myself' src="https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/120159406_748014692429573_4966786543556033911_n.png?_nc_cat=104&_nc_sid=b96e70&_nc_ohc=Wc7Xd57HA9YAX-YtiXv&_nc_ht=scontent-waw1-1.xx&oh=ae34ed9c6891f9f539f98471abd84987&oe=5F923E13" />
+            <img style={{maxWidth: '100%'}} className='mb-3' alt='myself' src={mySelfImage} />
             
             
             <TitleText text={i18n('contact')}></TitleText>
