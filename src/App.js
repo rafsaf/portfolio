@@ -23,7 +23,7 @@ function Footer() {
   rel="noopener noreferrer" 
   target='_blank'
   className='font-text-link-footer' 
-  href='https://rafsaf1.eu.pythonanywhere.com/api/'>Link to API</a>
+  href='https://rafsaf1.eu.pythonanywhere.com/admin/'>Login</a>
 
   return (
         <div className='font-text-footer mb-2 text-center' style={{
@@ -31,7 +31,7 @@ function Footer() {
           borderTop: '2px solid white',
           }}>
           {linkSource} &amp; {linkApi}
-          <p>@Created 2020</p>
+          <p>&#169; 2020</p>
         </div>
   );
 }
@@ -52,7 +52,7 @@ class App extends React.Component {
         <Navbar  collapseOnSelect expand="lg" className='colour-nav' variant="dark">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="mx-auto" >
               <Nav.Link as={Link} to="/home">{i18n('home')}</Nav.Link>
               <Nav.Link as={Link} to="/portfolio">{i18n('myProjects')}</Nav.Link>
               <Nav.Link as={Link} to="/learn-projects">{i18n('testProjects')}</Nav.Link>
