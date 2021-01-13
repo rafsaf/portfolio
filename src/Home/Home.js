@@ -91,7 +91,7 @@ function Home(props) {
             <HeaderText text='Rafał Safin'></HeaderText>
             <div className="row">
 
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-lg-7">
                     <TitleText text={i18n('contact')}></TitleText>
                     <Error
                         show={contactError}
@@ -136,7 +136,10 @@ function Home(props) {
                         </Technology>
                     ))}
                 </div>
-                <div className="col-12 col-lg-4">
+                <div className="d-none d-lg-block col-lg-5 text-left">
+                    <img style={{ maxWidth: '100%' }} className='mb-3' alt='myself' src={mySelfImage} />
+                </div>
+                <div className="d-block d-lg-none col-12">
                     <img style={{ maxWidth: '100%' }} className='mb-3' alt='myself' src={mySelfImage} />
                 </div>
             </div>
