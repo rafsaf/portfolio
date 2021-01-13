@@ -1,11 +1,11 @@
 export default {
     'lang' : 'pl',
-    'home' : 'Strona główna',
-    'language' : 'Język',
+    'home' : 'STRONA GŁÓWNA',
+    'language' : 'JĘZYK',
     'polish' : 'Polski',
     'english' : 'English',
-    'myProjects' : 'Portfolio',
-    'testProjects' : 'Testowe projekty',
+    'myProjects' : 'PORTFOLIO',
+    'testProjects' : 'TESTOWE PROJEKTY',
     'contact' : 'Kontakt',
     'technology' : 'Technologie',
     'errorAppeared' : 'Błąd podczas łączenia się z serwerem',
@@ -15,5 +15,7 @@ export default {
     'myLearnProjects' : 'Moje testowe projekty',
     'shortDescription' : 'Krótki opis',
     'created' : 'Utworzono',
-    'tryAgain' : 'Połącz ponownie'
+    'tryAgain' : 'Połącz ponownie',
+    'sourceCode' : 'Kod aplikacji w tym repozytorium',
+    'login' : 'Zaloguj jako administrator'
 }

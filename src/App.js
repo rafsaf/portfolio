@@ -6,7 +6,7 @@ import './i18n/localizationService';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { HashRouter as Router, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import Home from './Home/Home';
 import Projects from './Projects/Projects';
 import LearnProjects from './LearnProjects/LearnProjects';
@@ -17,13 +17,13 @@ function Footer() {
   rel="noopener noreferrer" 
   target='_blank'
   className='font-text-link-footer' 
-  href='https://github.com/rafsaf/portfolio'>Source code in this repository</a>
+  href='https://github.com/rafsaf/portfolio'>{i18n("sourceCode")}</a>
 
   const linkApi = <a 
   rel="noopener noreferrer" 
   target='_blank'
   className='font-text-link-footer' 
-  href='https://rafsaf1.eu.pythonanywhere.com/admin/'>Login</a>
+  href='https://rafsaf1.eu.pythonanywhere.com/admin/'>{i18n("login")}</a>
 
   return (
         <div className='font-text-footer mb-2 text-center' style={{
@@ -46,7 +46,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Router hashType='noslash'>
+        <Router basename={process.env.PUBLIC_URL}>
 
 
         <Navbar  collapseOnSelect expand="lg" className='colour-nav' variant="dark">
