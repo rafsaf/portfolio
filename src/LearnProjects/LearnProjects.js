@@ -40,7 +40,7 @@ export default function LearnProjects() {
     );
 
     return (
-        <div id='learn-projects'>
+        <div id='learn-projects' className="container-fluid">
             <div className='text-center'>
                 <HeaderText text={i18n('myLearnProjects')}></HeaderText>
 

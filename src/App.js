@@ -26,11 +26,11 @@ function Footer() {
     href='https://rafsaf1.eu.pythonanywhere.com/admin/'>{i18n("login")}</a>
 
   return (
-    <div className='mb-2 text-center' style={{
+    <div className='mb-2 text-center container-fluid' style={{
       marginTop: '15%',
       borderTop: '2px solid white',
       color: 'white',
-    }}>
+    }} cl>
       {linkSource} &amp; {linkApi}
       <p>&#169; 2020</p>
     </div>

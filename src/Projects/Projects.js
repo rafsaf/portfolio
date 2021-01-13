@@ -39,7 +39,7 @@ export default function Projects() {
     );
 
     return (
-        <div id='projects'>
+        <div id='projects' className="container-fluid">
             <div className='text-center'>
                 <HeaderText text={i18n('Projects')}></HeaderText>
 
@@ -52,7 +52,7 @@ export default function Projects() {
 
                 </Error>
 
-                <div style={{marginLeft: 25, marginRight: 25}}>
+                <div>
                     {projects.map(row => (
                         <SingleProject
                         key={row.title}
