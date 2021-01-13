@@ -1,19 +1,18 @@
 /* global i18n */
 import '../i18n/localizationService';
 
-import table from './table.jpg';
 import Error from '../shared/error';
-import {TitleText, HeaderText, FontLink} from '../shared/texts';
+import { TitleText, HeaderText, FontLink } from '../shared/texts';
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import mySelfImage from '../myself.png'
 
-
-function Technology(props) {
+export function Technology(props) {
     return (
         <div className='my-3'>
-        <img className='avatar-small' alt={props.title} src={props.image} />
-        <span className='font-text ml-2'>{props.title}</span>
+            <img className='avatar-small' alt={props.title} src={props.image} />
+            <span className='font-text ml-2'>{props.title}</span>
         </div>
     );
 }
@@ -44,34 +43,34 @@ function Home(props) {
 
     const fetchContacts = () => {
         axios
-        .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
-        .then(res => {
-            setContacts(res.data);
-            setContactError(false);
-        })
-        .catch(() => {
-            setContactError(null);
+            .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
+            .then(res => {
+                setContacts(res.data);
+                setContactError(false);
+            })
+            .catch(() => {
+                setContactError(null);
 
-            setTimeout(() => {
-                setContactError(true);
-            }, 2000);
-        });
+                setTimeout(() => {
+                    setContactError(true);
+                }, 2000);
+            });
     };
 
     const fetchTechnologies = () => {
         axios
-        .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
-        .then(res => {
-            setTechnologies(res.data);
-            setTechnologyError(false);
-        })
-        .catch(() => {
-            setTechnologyError(null);
+            .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
+            .then(res => {
+                setTechnologies(res.data);
+                setTechnologyError(false);
+            })
+            .catch(() => {
+                setTechnologyError(null);
 
-            setTimeout(() => {
-                setTechnologyError(true);
-            }, 2000);
-    });
+                setTimeout(() => {
+                    setTechnologyError(true);
+                }, 2000);
+            });
     };
 
 
@@ -88,55 +87,59 @@ function Home(props) {
     );
 
     return (
-        <div id='Home' className='text-center'>
+        <div id='Home' className='text-center container-fluid'>
+            <HeaderText text='Rafał Safin'></HeaderText>
+            <div className="row">
 
-            <HeaderText text='Rafsaf'></HeaderText>
-            <TitleText text={i18n('contact')}></TitleText>
+                <div className="col-12 col-lg-8">
+                    <TitleText text={i18n('contact')}></TitleText>
+                    <Error
+                        show={contactError}
+                        onExit={() => {
+                            setContactError(false);
+                            fetchContacts();
+                        }}>
 
-        <Error
-        show={contactError}
-        onExit={() => {
-            setContactError(false);
-            fetchContacts();
-            }}>
-                
-        </Error>
+                    </Error>
 
-        {contacts.map(row => (
-            <Contact
-            key={row.description}
-            description={row.description}
-            image={row.image}
-            text={row.text} 
-            link={row.link}>
+                    {contacts.map(row => (
+                        <Contact
+                            key={row.description}
+                            description={row.description}
+                            image={row.image}
+                            text={row.text}
+                            link={row.link}>
 
-            </Contact>
-        ))}
-        
+                        </Contact>
+                    ))}
 
-        <img className='img-fluid mx-auto my-5 d-none d-lg-block' width='75%' src={table} alt = 'table'/>
-        <img className='img-fluid mx-auto d-block my-5 d-lg-none' width='100%' src={table} alt = 'table'/>
-        
-        <TitleText text={i18n('technology')}></TitleText>
 
-        <Error
-        show={technologyError}
-        onExit={() => {
-            setTechnologyError(false);
-            fetchTechnologies();
-        }}>
+                    <div className='mt-5'>
+                        <TitleText text={i18n('technology')}></TitleText>
+                    </div>
 
-        </Error>
+                    <Error
+                        show={technologyError}
+                        onExit={() => {
+                            setTechnologyError(false);
+                            fetchTechnologies();
+                        }}>
 
-        {technologies.map(row => (
-            <Technology
-            image={row.image}
-            title={row.title}
-            key={row.title}>
+                    </Error>
 
-            </Technology>
-        ))}
+                    {technologies.map(row => (
+                        <Technology
+                            image={row.image}
+                            title={row.title}
+                            key={row.title}>
 
+                        </Technology>
+                    ))}
+                </div>
+                <div className="col-12 col-lg-4">
+                    <img style={{ maxWidth: '100%' }} className='mb-3' alt='myself' src={mySelfImage} />
+                </div>
+            </div>
         </div>
     );
 };

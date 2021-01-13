@@ -1,11 +1,11 @@
 export default {
     'lang' : 'en',
-    'home' : 'Home',
-    'language' : 'Language',
+    'home' : 'HOME',
+    'language' : 'LANGUAGE',
     'polish' : 'Polski',
     'english' : 'English',
-    'myProjects' : 'Portfolio',
-    'testProjects' : 'Test Projects',
+    'myProjects' : 'PORTFOLIO',
+    'testProjects' : 'TEST PROJECTS',
     'contact' : 'Contact',
     'technology' : 'Technology',
     'errorAppeared' : 'Error connecting to the server',
@@ -15,6 +15,8 @@ export default {
     'myLearnProjects' : 'My test projects',
     'shortDescription' : 'Short Description',
     'created' : 'Created',
-    'tryAgain' : 'Reconnect'
+    'tryAgain' : 'Reconnect',
+    'sourceCode' : 'The source code in this repository',
+    'login' : 'Log in as administrator'
     
 }
