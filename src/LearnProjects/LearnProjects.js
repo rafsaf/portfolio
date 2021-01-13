@@ -50,7 +50,7 @@ export default function LearnProjects() {
                     setLearnProjectsError(null);
                     fetchLearnProjects();
                 }} />
-                <div style={{marginLeft: 25, marginRight: 25}}>
+                <div>
                     {learnProjects.map(row => (
                         <SingleProject
                         key={row.title}
