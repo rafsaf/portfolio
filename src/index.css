@@ -39,7 +39,7 @@ body {
 
 .font-title {
     margin-top: 2%;
-    font-family: 'Seaweed Script', cursive;
+    font-family: cursive;
     font-size: 8vh;
     color: white;
 }
@@ -47,7 +47,6 @@ body {
 .font-title-border {
     margin-top: 2%;
     border-top: 2px solid whitesmoke;
-    font-family: 'Lobster', cursive;
     font-size: x-large;
     color: rgb(187, 159, 174);
 }
@@ -56,13 +55,6 @@ body {
 
 .font-text {
     font-size: normal ;
-    font-family: 'Courgette', cursive;
-    color: white;
-}
-
-.font-text-footer {
-    font-family: 'Courgette', cursive;
-    font-size: x-small;
     color: white;
 }
 
@@ -83,7 +75,7 @@ body {
 
 
 .font-text-link-footer {
-    font-family: 'Courgette', cursive;
+
     color: white;
     border-bottom: 1px solid transparent;
 }
