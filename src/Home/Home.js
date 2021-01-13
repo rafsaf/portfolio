@@ -88,7 +88,7 @@ function Home(props) {
     <div id="Home" className="text-center container-fluid">
       <HeaderText text="Rafał Safin"></HeaderText>
       <div className="row">
-        <div className="col-12 col-lg-7">
+        <div className="col-12 col-lg-6 offset-lg-1">
           <TitleText text={i18n("aboutMe")}></TitleText>
           <div className="container">
             <NormalText text={i18n("longTextAbout")} />
