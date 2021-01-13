@@ -1,150 +1,160 @@
 /* global i18n */
-import '../i18n/localizationService';
+import "../i18n/localizationService";
 
-import Error from '../shared/error';
-import { TitleText, HeaderText, FontLink } from '../shared/texts';
+import Error from "../shared/error";
+import { TitleText, HeaderText, FontLink, NormalText } from "../shared/texts";
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import mySelfImage from '../myself.png'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import mySelfImage from "../myself.png";
 
 export function Technology(props) {
-    return (
-        <div className='my-3'>
-            <img className='avatar-small' alt={props.title} src={props.image} />
-            <span className='font-text ml-2'>{props.title}</span>
-        </div>
-    );
+  return (
+    <div className="my-3">
+      <img className="avatar-small" alt={props.title} src={props.image} />
+      <span className="font-text ml-2">{props.title}</span>
+    </div>
+  );
 }
 
 function Contact(props) {
-    let textItem;
-    if (props.link) {
-        textItem = <FontLink href={props.text} text={props.text}></FontLink>
-    } else {
-        textItem = <span className='font-text'>{props.text}</span>;
-    };
+  let textItem;
+  if (props.link) {
+    textItem = <FontLink href={props.text} text={props.text}></FontLink>;
+  } else {
+    textItem = <span className="font-text">{props.text}</span>;
+  }
 
-    return (
-        <div className='my-3'>
-            <img className='avatar-small mr-2' alt={props.description} src={props.image} />
-            {textItem}
-        </div>
-    );
+  return (
+    <div className="my-3">
+      <img
+        className="avatar-small mr-2"
+        alt={props.description}
+        src={props.image}
+      />
+      {textItem}
+    </div>
+  );
 }
 
-
 function Home(props) {
-    const [contactError, setContactError] = useState(null);
-    const [contacts, setContacts] = useState([]);
+  const [contactError, setContactError] = useState(null);
+  const [contacts, setContacts] = useState([]);
 
-    const [technologyError, setTechnologyError] = useState(null);
-    const [technologies, setTechnologies] = useState([]);
+  const [technologyError, setTechnologyError] = useState(null);
+  const [technologies, setTechnologies] = useState([]);
 
-    const fetchContacts = () => {
-        axios
-            .get('https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json')
-            .then(res => {
-                setContacts(res.data);
-                setContactError(false);
-            })
-            .catch(() => {
-                setContactError(null);
+  const fetchContacts = () => {
+    axios
+      .get("https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json")
+      .then((res) => {
+        setContacts(res.data);
+        setContactError(false);
+      })
+      .catch(() => {
+        setContactError(null);
 
-                setTimeout(() => {
-                    setContactError(true);
-                }, 2000);
-            });
-    };
+        setTimeout(() => {
+          setContactError(true);
+        }, 2000);
+      });
+  };
 
-    const fetchTechnologies = () => {
-        axios
-            .get('https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json')
-            .then(res => {
-                setTechnologies(res.data);
-                setTechnologyError(false);
-            })
-            .catch(() => {
-                setTechnologyError(null);
+  const fetchTechnologies = () => {
+    axios
+      .get("https://rafsaf1.eu.pythonanywhere.com/api/techonology/?format=json")
+      .then((res) => {
+        setTechnologies(res.data);
+        setTechnologyError(false);
+      })
+      .catch(() => {
+        setTechnologyError(null);
 
-                setTimeout(() => {
-                    setTechnologyError(true);
-                }, 2000);
-            });
-    };
+        setTimeout(() => {
+          setTechnologyError(true);
+        }, 2000);
+      });
+  };
 
+  useEffect(() => {
+    fetchContacts();
+  }, []);
 
-    useEffect(
-        () => {
-            fetchContacts();
-        }, []
-    );
+  useEffect(() => {
+    fetchTechnologies();
+  }, []);
 
-    useEffect(
-        () => {
-            fetchTechnologies();
-        }, []
-    );
+  return (
+    <div id="Home" className="text-center container-fluid">
+      <HeaderText text="Rafał Safin"></HeaderText>
+      <div className="row">
+        <div className="col-12 col-lg-7">
+          <TitleText text={i18n("aboutMe")}></TitleText>
+          <div className="container">
+            <NormalText text={i18n("longTextAbout")} />
+            <NormalText text={i18n("dateAbout")} />
+          </div>
 
-    return (
-        <div id='Home' className='text-center container-fluid'>
-            <HeaderText text='Rafał Safin'></HeaderText>
-            <div className="row">
+          <div className="mt-5">
+            <TitleText text={i18n("contact")}></TitleText>
+          </div>
+          <Error
+            show={contactError}
+            onExit={() => {
+              setContactError(false);
+              fetchContacts();
+            }}
+          ></Error>
 
-                <div className="col-12 col-lg-7">
-                    <TitleText text={i18n('contact')}></TitleText>
-                    <Error
-                        show={contactError}
-                        onExit={() => {
-                            setContactError(false);
-                            fetchContacts();
-                        }}>
+          {contacts.map((row) => (
+            <Contact
+              key={row.description}
+              description={row.description}
+              image={row.image}
+              text={row.text}
+              link={row.link}
+            ></Contact>
+          ))}
 
-                    </Error>
+          <div className="mt-5">
+            <TitleText text={i18n("technology")}></TitleText>
+          </div>
 
-                    {contacts.map(row => (
-                        <Contact
-                            key={row.description}
-                            description={row.description}
-                            image={row.image}
-                            text={row.text}
-                            link={row.link}>
+          <Error
+            show={technologyError}
+            onExit={() => {
+              setTechnologyError(false);
+              fetchTechnologies();
+            }}
+          ></Error>
 
-                        </Contact>
-                    ))}
-
-
-                    <div className='mt-5'>
-                        <TitleText text={i18n('technology')}></TitleText>
-                    </div>
-
-                    <Error
-                        show={technologyError}
-                        onExit={() => {
-                            setTechnologyError(false);
-                            fetchTechnologies();
-                        }}>
-
-                    </Error>
-
-                    {technologies.map(row => (
-                        <Technology
-                            image={row.image}
-                            title={row.title}
-                            key={row.title}>
-
-                        </Technology>
-                    ))}
-                </div>
-                <div className="d-none d-lg-block col-lg-5 text-left">
-                    <img style={{ maxWidth: '100%' }} className='mb-3' alt='myself' src={mySelfImage} />
-                </div>
-                <div className="d-block d-lg-none col-12">
-                    <img style={{ maxWidth: '100%' }} className='mb-3' alt='myself' src={mySelfImage} />
-                </div>
-            </div>
+          {technologies.map((row) => (
+            <Technology
+              image={row.image}
+              title={row.title}
+              key={row.title}
+            ></Technology>
+          ))}
         </div>
-    );
-};
+        <div className="d-none d-lg-block col-lg-5 text-left">
+          <img
+            style={{ maxWidth: "100%" }}
+            className="mb-3"
+            alt="myself"
+            src={mySelfImage}
+          />
+        </div>
+        <div className="d-block d-lg-none col-12">
+          <img
+            style={{ maxWidth: "100%" }}
+            className="mb-3"
+            alt="myself"
+            src={mySelfImage}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Home;
