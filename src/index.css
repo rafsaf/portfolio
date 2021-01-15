@@ -1,93 +1,118 @@
-
 /* Navbar stuff */
 body {
-    background-color:  #343a40;
+  background-color: #343a40;
 }
 
 .colour-nav {
-    background-color: #343a40;
+  background-color: #343a40;
 }
 
 .nav-menu-bg {
-
-    background-color: #44474b !important;
+  background-color: #44474b !important;
 }
 
 .nav-item-bg {
-    color: rgb(139, 139, 139);
+  color: rgb(139, 139, 139);
 }
 
 .nav-item-bg:hover {
-    background-color: initial;
-    color: whitesmoke;
+  background-color: initial;
+  color: whitesmoke;
 }
 /* google fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Seaweed+Script&family=Lobster&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Seaweed+Script&family=Lobster&display=swap");
 
 /* Big front header */
 .font-header {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 12vh;
-    font-family: 'Lobster', cursive;
-    color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 12vh;
+  color: white;
 }
 
 /* Subtitles bigger */
 
 .font-title {
-    margin-top: 2%;
-    font-family: cursive;
-    font-size: 8vh;
-    color: white;
+  margin-top: 2%;
+  font-size: 8vh;
+  color: white;
 }
 
 .font-title-border {
-    margin-top: 2%;
-    border-top: 2px solid whitesmoke;
-    font-size: x-large;
-    color: rgb(187, 159, 174);
+  margin-top: 2%;
+  border-top: 2px solid whitesmoke;
+  font-size: x-large;
+  color: rgb(187, 159, 174);
 }
 
 /* Standard and footer text */
 
 .font-text {
-    font-size: normal ;
-    color: white;
+  font-size: normal;
+  color: white;
 }
 
 /* Standard and footer link */
 
 .font-text-link {
-    font-size: normal;
-    border-bottom: 3px solid transparent;
-    color: white;
+  font-size: normal;
+  border-bottom: 3px solid transparent;
+  color: white;
 }
 
 .font-text-link:hover {
-    color: whitesmoke;
-    text-decoration: none;
-    border-bottom: 3px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  border-bottom: 3px solid whitesmoke;
 }
 
-
 .font-text-link-footer {
-
-    color: white;
-    border-bottom: 1px solid transparent;
+  font-size: small;
+  color: white;
+  border-bottom: 1px solid transparent;
 }
 
 .font-text-link-footer:hover {
-    color: whitesmoke;
-    text-decoration: none;
-    border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  border-bottom: 1px solid whitesmoke;
 }
 
 /* Avatars */
 
 .avatar-small {
-    width: 24px !important;
-    height: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.nav-links {
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links-clicked {
+  color: rgb(199, 198, 198) !important;
+  border-bottom: 3px solid rgb(199, 198, 198);
+}
+
+.nav-links-clicked:hover {
+  color: rgb(221, 218, 218) !important;
+}
+
+.nav-links:hover {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ) !important; /*will change color of text within the element on hover */
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-links:focus {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.nav-links-clicked:focus {
+  color: rgb(199, 198, 198)!important;
 }

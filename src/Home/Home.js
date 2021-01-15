@@ -2,7 +2,7 @@
 import "../i18n/localizationService";
 
 import Error from "../shared/error";
-import { TitleText, HeaderText, FontLink, NormalText } from "../shared/texts";
+import { TitleText, FontLink, NormalText } from "../shared/texts";
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -37,12 +37,13 @@ function Contact(props) {
   );
 }
 
-function Home(props) {
+function Home() {
   const [contactError, setContactError] = useState(null);
   const [contacts, setContacts] = useState([]);
 
   const [technologyError, setTechnologyError] = useState(null);
   const [technologies, setTechnologies] = useState([]);
+
 
   const fetchContacts = () => {
     axios
@@ -85,9 +86,17 @@ function Home(props) {
   }, []);
 
   return (
-    <div id="Home" className="text-center container-fluid">
-      <HeaderText text="Rafał Safin"></HeaderText>
-      <div className="row">
+    <div id="Home" className="text-center container-fluid" style={{minHeight:"68vh"}}>
+      <div className="row mt-4">
+      <div className="d-block d-lg-none col-12">
+        <TitleText text="Rafał Safin"></TitleText>
+          <img
+            style={{ maxWidth: "100%" }}
+            className="mb-3"
+            alt="myself"
+            src={mySelfImage}
+          />
+        </div>
         <div className="col-12 col-lg-6 offset-lg-1">
           <TitleText text={i18n("aboutMe")}></TitleText>
           <div className="container">
@@ -137,6 +146,7 @@ function Home(props) {
           ))}
         </div>
         <div className="d-none d-lg-block col-lg-5 text-left">
+        <TitleText text="Rafał Safin"></TitleText>
           <img
             style={{ maxWidth: "100%" }}
             className="mb-3"
@@ -144,14 +154,7 @@ function Home(props) {
             src={mySelfImage}
           />
         </div>
-        <div className="d-block d-lg-none col-12">
-          <img
-            style={{ maxWidth: "100%" }}
-            className="mb-3"
-            alt="myself"
-            src={mySelfImage}
-          />
-        </div>
+
       </div>
     </div>
   );

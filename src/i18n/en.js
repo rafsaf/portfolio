@@ -18,7 +18,7 @@ export default {
   created: "Created",
   tryAgain: "Reconnect",
   sourceCode: "The source code in this repository",
-  login: "Log in as administrator",
+  login: "Administration",
   aboutMe: "About Me",
   longTextAbout:
     "I am a student of the Faculty of Mathematics and Computer Science at the University of Wrocław in the field of Mathematics. Since the beginning of 2020 I have been interested in web applications, both backend and frontend, and I have been programming since the beginning of October 2019. I write mainly in Python and JS. I have been using Github every day since June 2020, and in the following months I also got to know cloud technologies on Amazon AWS. After getting to know the Django framework in-depth, I started developing applications with the React frontend and Django REST backend, while learning about everything that caught my eye.",

@@ -2,7 +2,6 @@
 import '../i18n/localizationService';
 
 import Error from '../shared/error';
-import {HeaderText} from '../shared/texts';
 import SingleProject from '../shared/singleProject';
 
 import React, {useState, useEffect} from 'react';
@@ -40,10 +39,8 @@ export default function LearnProjects() {
     );
 
     return (
-        <div id='learn-projects' className="container-fluid">
-            <div className='text-center'>
-                <HeaderText text={i18n('myLearnProjects')}></HeaderText>
-
+        <div id='learn-projects' style={{minHeight:"68vh"}} className="container-fluid">
+            <div className='text-center mt-4'>
                 <Error
                 show={learnProjectsError}
                 onExit={() => {
