@@ -44,7 +44,6 @@ function Home() {
   const [technologyError, setTechnologyError] = useState(null);
   const [technologies, setTechnologies] = useState([]);
 
-
   const fetchContacts = () => {
     axios
       .get("https://rafsaf1.eu.pythonanywhere.com/api/contact/?format=json")
@@ -86,17 +85,12 @@ function Home() {
   }, []);
 
   return (
-    <div id="Home" className="text-center container-fluid" style={{minHeight:"68vh"}}>
+    <div
+      id="Home"
+      className="text-center container-fluid"
+      style={{ minHeight: "68vh" }}
+    >
       <div className="row mt-4">
-      <div className="d-block d-lg-none col-12">
-        <TitleText text="Rafał Safin"></TitleText>
-          <img
-            style={{ maxWidth: "100%" }}
-            className="mb-3"
-            alt="myself"
-            src={mySelfImage}
-          />
-        </div>
         <div className="col-12 col-lg-6 offset-lg-1">
           <TitleText text={i18n("aboutMe")}></TitleText>
           <div className="container">
@@ -146,15 +140,21 @@ function Home() {
           ))}
         </div>
         <div className="d-none d-lg-block col-lg-5 text-left">
-        <TitleText text="Rafał Safin"></TitleText>
           <img
             style={{ maxWidth: "100%" }}
-            className="mb-3"
+            className="mb-4 mt-4"
             alt="myself"
             src={mySelfImage}
           />
         </div>
-
+        <div className="d-block d-lg-none col-12">
+          <img
+            style={{ maxWidth: "100%" }}
+            className="mb-4 mt-4"
+            alt="myself"
+            src={mySelfImage}
+          />
+        </div>
       </div>
     </div>
   );

@@ -21,6 +21,6 @@ export default {
   login: "Administracja",
   aboutMe: "O Mnie",
   longTextAbout:
-    "Jestem studentem wydziału Matematyki i Informatyki Uniwersytetu Wrocławskiego na kierunku Matematyka. Od początku 2020 roku interesuję się aplikacjami webowymi, tak backendem jak i frontendem zaś programuję od początku października 2019. Piszę głównie w Pythonie i JS. Od czerwca 2020 korzystam na co dzień z Githuba, w kolejnych miesiącach poznałem też technologie chmurowe na Amazon AWS. Po dogłębnym poznaniu frameworka Django, zająłem się tworzeniem aplikacji z frontendem Reacta i backendem Django REST, ucząc się przy okazji wszystkiego z tym związanego co wpadło mi w oczy.",
+    "Nazywam się Rafał Safin i jestem studentem wydziału Matematyki i Informatyki Uniwersytetu Wrocławskiego na kierunku Matematyka. Od początku 2020 roku interesuję się aplikacjami webowymi, tak backendem jak i frontendem zaś programuję od początku października 2019. Piszę głównie w Pythonie i JS. Od czerwca 2020 korzystam na co dzień z Githuba, w kolejnych miesiącach poznałem też technologie chmurowe na Amazon AWS. Po dogłębnym poznaniu frameworka Django, zająłem się tworzeniem aplikacji z frontendem Reacta i backendem Django REST, ucząc się przy okazji wszystkiego z tym związanego co wpadło mi w oczy.",
   dateAbout: "– 13.01.2021",
 };
