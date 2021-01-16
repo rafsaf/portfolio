@@ -68,7 +68,7 @@ function App() {
             <Nav className="mx-auto">
               <Nav.Link
                 className={
-                  location === "/home" ? "nav-links-clicked mr-1" : "nav-links mr-1"
+                  location === "/home" || location === "/" ? "nav-links-clicked mr-1" : "nav-links mr-1"
                 }
                 onClick = {() => changeLocation("/home")}
                 as={Link}
