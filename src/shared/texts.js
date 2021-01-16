@@ -35,7 +35,7 @@ function FontLink(props) {
     <a 
         rel="noopener noreferrer" 
         target='_blank'
-        className='font-text-link' 
+        className='font-text-link text-break' 
         href={props.href}
     >
         {props.text}
@@ -48,7 +48,7 @@ function FontLinkFooter(props) {
     <a 
         rel="noopener noreferrer" 
         target='_blank'
-        className='font-text-link-footer' 
+        className='font-text-link-footer text-break' 
         href={props.href}
     >
         {props.text}
